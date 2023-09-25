@@ -31,7 +31,9 @@ async function fetchData() {
   for (let i = id; i < id + 5; i++) {
     fetch(`https://picsum.photos/id/${i}/info`)
       .then(response => response.json())
-      .then(data => displayImage(data.download_url));
+      .catch(error => console.log(error.message))
+      .then(data => displayImage(data.download_url))
+      .catch(error => console.log(error.message));
   }
   id += 5;
 
