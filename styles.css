@@ -1,0 +1,33 @@
+.block {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+
+.images-wrapper {
+    display: flex;
+    min-height: 100vw;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+body{
+    background-color: #111;
+    color: #fff
+}
+
+.image{
+    border-radius: 1rem;
+    min-width: 200px;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+
+
+}
+.image:hover{
+    transform: scale(1.05);
+}
