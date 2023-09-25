@@ -40,7 +40,6 @@ async function fetchData() {
 // Function to check if the user has scrolled to the bottom of the page
 function handleScroll() {
   const dataContainer = document.getElementById('data-container');
-  console.log('window height', window.innerHeight, 'scrollY', window.scrollY, 'dataContainer height', dataContainer.offsetHeight)
   if (dataContainer && window.innerHeight + window.scrollY >= dataContainer.offsetHeight) {
     fetchData();
   }
