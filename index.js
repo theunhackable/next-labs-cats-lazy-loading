@@ -1,16 +1,16 @@
 let isLoading = false;
 
-
-
-
 const dataContainer = document.getElementById('data-container');
-const loader = document.getElementById('loader');  
+const loader = document.getElementById('loader'); 
+
 function displayImage(imageUrl) {
 
   const imageElement = document.createElement('img');
   
   imageElement.classList.add('image');
   imageElement.src = imageUrl;
+  imageElement.width = 200;
+  imageElement.height = 300;
   imageElement.alt = "random image";
 
   dataContainer.appendChild(imageElement);
@@ -41,7 +41,6 @@ async function fetchData() {
   })
   loader.classList.add('hidden');
   loader.classList.remove('show');
-    // displayImage('https://picsum.photos/200/300?random=2')
       
   isLoading = false;
 }
