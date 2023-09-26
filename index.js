@@ -6,12 +6,11 @@ let isLoading = false;
 const dataContainer = document.getElementById('data-container');
 const loader = document.getElementById('loader');  
 function displayImage(imageUrl) {
-  
+
   const imageElement = document.createElement('img');
   
   imageElement.classList.add('image');
   imageElement.src = imageUrl;
-  imageElement.loading = "lazy";
   imageElement.alt = "random image";
 
   dataContainer.appendChild(imageElement);
