@@ -4,7 +4,7 @@ let isLoading = false;
 
 
 const dataContainer = document.getElementById('data-container');
-
+const loader = document.getElementById('loader');  
 function displayImage(imageUrl) {
   const imageElement = document.createElement('img');
   
@@ -22,17 +22,23 @@ async function fetchData() {
   } else {
     isLoading = true;
   }
-  
+  let promises = [];
+  loader.classList.add('show');
+  for (let i = 0; i < 5; i++) {
 
-  for (let i = 0; i < 15; i++) {
+     promises.push(fetch('https://picsum.photos/200/300?random=1'));
+  }
+  loader.classList.add('show');
+  loader.classList.remove('hidden');
 
-    fetch('https://picsum.photos/200/300?random=1').then((response) => {
-      displayImage(response.url);
-    }
-    );
+  const responses = await Promise.all(promises)
+  responses.map((response) => {
+    displayImage(response.url);
+  })
+  loader.classList.add('hidden');
+  loader.classList.remove('show');
     // displayImage('https://picsum.photos/200/300?random=2')
       
-  }
   isLoading = false;
 }
 // Function to check if the user has scrolled to the bottom of the page
