@@ -6,6 +6,7 @@ let isLoading = false;
 const dataContainer = document.getElementById('data-container');
 const loader = document.getElementById('loader');  
 function displayImage(imageUrl) {
+  
   const imageElement = document.createElement('img');
   
   imageElement.classList.add('image');
@@ -17,13 +18,17 @@ function displayImage(imageUrl) {
 }
 
 async function fetchData() {
+
   if (isLoading) {
     return;
   } else {
     isLoading = true;
   }
+
   let promises = [];
+
   loader.classList.add('show');
+
   for (let i = 0; i < 5; i++) {
 
      promises.push(fetch('https://picsum.photos/200/300?random=1'));
