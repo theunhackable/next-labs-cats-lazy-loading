@@ -6,7 +6,7 @@ const loader = document.getElementById('loader');
 function displayImage(imageUrl) {
 
   const imageElement = document.createElement('img');
-  
+
   imageElement.classList.add('image');
   imageElement.src = imageUrl;
   imageElement.width = 200;
@@ -44,7 +44,7 @@ async function fetchData() {
       
   isLoading = false;
 }
-// Function to check if the user has scrolled to the bottom of the page
+// Function to check if the user has scrolled to the bottom of the page or not
 function handleScroll() {
   if (dataContainer && window.innerHeight + window.scrollY >= dataContainer.offsetHeight) {
     fetchData();
